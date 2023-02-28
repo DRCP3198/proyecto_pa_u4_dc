@@ -1,10 +1,13 @@
 package com.example.demo.modelo;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -47,6 +50,25 @@ public class Estudiante {
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
+	
+	@OneToOne
+	@JoinColumn( name = "ciu_id_estu")
+	private CiudadanoM ciudadanos;
+
+	public CiudadanoM getCiudadanos() {
+		return ciudadanos;
+	}
+
+	public void setCiudadanos(CiudadanoM ciudadanos) {
+		this.ciudadanos = ciudadanos;
+	}
+
+	@Override
+	public String toString() {
+		return "Estudiante [id=" + id + ", nombreCompleto=" + nombreCompleto + ", edad=" + edad + ", ciudadanos="
+				+ ciudadanos + "]";
+	}
+	
 	
 	
 	

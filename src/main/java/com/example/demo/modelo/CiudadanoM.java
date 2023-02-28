@@ -2,17 +2,20 @@ package com.example.demo.modelo;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="ciudadano_p")
-public class Ciudadano {
+public class CiudadanoM {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_ciud")
@@ -54,8 +57,21 @@ public class Ciudadano {
 	public void setFechaNacimiento(LocalDateTime fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
-	
+	@OneToOne(mappedBy = "ciudadanos")
+	private Estudiante estudiantes;
+
+
+	public Estudiante getEstudiantes() {
+		return estudiantes;
+	}
+	public void setEstudiantes(Estudiante estudiantes) {
+		this.estudiantes = estudiantes;
+	}
+	@Override
+	public String toString() {
+		return "Ciudadano [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento="
+				+ fechaNacimiento + ", estudiantes=" + estudiantes + "]";
+	}
 	
 	
 	

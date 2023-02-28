@@ -1,12 +1,15 @@
 package com.example.demo.repo;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.funcional.Ciudadano;
+import com.example.demo.modelo.CiudadanoM;
 
 @Repository
-public interface ICiudadano {
+public interface ICiudadanoRepo {
 
 	
-	public void agregar(Ciudadano ciudadano);
+	public List<CiudadanoM> consultar();
 }

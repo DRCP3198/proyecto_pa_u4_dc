@@ -34,13 +34,13 @@ public class PersonaServiceImpl  implements  IPersonaService{
 	}
 
 	@Override
-	public int borrar(Integer id) {
+	public void borrar(Integer id) {
 		// TODO Auto-generated method stub
-		return this.iPersonaRepository.eliminar(id);
+		this.iPersonaRepository.eliminar(id);
 	}
 
 	@Override
-	public void guardar(Persona persona) {
+	public void agregar(Persona persona) {
 		// TODO Auto-generated method stub
 		this.iPersonaRepository.guardar(persona);
 	}

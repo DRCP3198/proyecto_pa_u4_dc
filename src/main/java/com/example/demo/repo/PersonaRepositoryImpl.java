@@ -42,13 +42,12 @@ public class PersonaRepositoryImpl implements IPersonaRepository{
 	}
 
 	@Override
-	public int eliminar(Integer id) {
+	public void eliminar(Integer id) {
 		// TODO Auto-generated method stub
 		
-		
-		Query query = this.entityManager.createQuery("DELETE from Persona e where e.id = :datoId");
-		query.setParameter("datoId", id);
-		return query.executeUpdate();
+		Persona persona = this.buscarPorId(id);
+		this.entityManager.remove(persona);
+	
 	}
 
 	@Override

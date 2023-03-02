@@ -33,16 +33,16 @@ public class ProyectoPaU4Dc1Application implements CommandLineRunner{
 		persona.setGenero("F");
 		persona.setCedula("1751457191");
 		
-		this.iPersonaService.guardar(persona);
-		
-		Persona per = this.iPersonaService.encontrarPorId(2);
-		LOG.info("La persona buscada es:" + per);
-		
-		
-		List<Persona> listaPersonas= this.iPersonaService.encontrarTodos();
-		listaPersonas.stream().forEach(persona1 -> System.out.println(persona1));
-		
-		this.iPersonaService.borrar(2);
+		//this.iPersonaService.guardar(persona);
+//		
+//		Persona per = this.iPersonaService.encontrarPorId(2);
+//		LOG.info("La persona buscada es:" + per);
+//		
+//		
+//		List<Persona> listaPersonas= this.iPersonaService.encontrarTodos();
+//		listaPersonas.stream().forEach(persona1 -> System.out.println(persona1));
+//		
+//		this.iPersonaService.borrar(2);
 	}
 
 }

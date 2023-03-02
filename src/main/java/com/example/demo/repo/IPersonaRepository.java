@@ -10,7 +10,7 @@ public interface IPersonaRepository {
 	public List<Persona> buscarTodos();
 	public Persona buscarPorId(Integer id);
 	public void actualizar(Persona persona);
-	public int eliminar(Integer id);
+	public void eliminar(Integer id);
 	public void guardar(Persona persona);
 	
 	
